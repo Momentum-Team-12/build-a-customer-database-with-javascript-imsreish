@@ -554,10 +554,19 @@ const customers = [
 ];
 
 let allCustomers = customers;
-// let firstName = allCustomers.name.first;
-// // let lastName = customers.name[2];
-
+console.log("allCustomers");
+let aPicture = document.getElementById("displayPicture");
+let aName = document.getElementById("displayName");
+let anEail = document.getElementById("displayEmail");
+let anAddress = document.getElementById("displayAddressLine");
+let aDob = document.getElementById("displayDOB");
+let aLoyaltyDate = document.getElementById("displayLoyaltyDate");
 for (let aCustomer of allCustomers) {
+  allCustomers.forEach((person) => {
+    let h1 = document.createElement("h1");
+    h1.innerText = person;
+    aName.appendChild(h1);
+  });
   console.log(`${aCustomer.picture.thumbnail}`);
   console.log(`${aCustomer.name.first} ${aCustomer.name.last}`);
   console.log(`${aCustomer.email}`);
@@ -568,3 +577,15 @@ for (let aCustomer of allCustomers) {
   console.log(`DOB: ${aCustomer.dob.date}`);
   console.log(`Customer since: ${aCustomer.registered.date}`);
 }
+
+// function displayEachCustomer(picture, name, email, address, dob, loyalty) {
+//   console.log("displayEachCustomer");
+//   for (let aCustomer of allCustomers) {
+//     console.log(`${aCustomer.picture.thumbnail}`);
+//   }
+
+// allCustomers.forEach((person) => {
+//   let div = document.createElement("div");
+//   div.text = person;
+//   div.appendChild(person);
+// });
